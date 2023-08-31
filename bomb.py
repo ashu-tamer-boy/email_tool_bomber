@@ -240,35 +240,36 @@ class Email_Bomber:
 
 if __name__=='__main__':
     banner()
-    print('1.Bomb\n2.send email to masses\n3.extract mail from text and send mail')
-    x = int(input('enter'))
-    
-    if x >= 1 and x <= 3 :
-        if x == 1:
-            bomb = Email_Bomber(x)
-            Email_Bomber.flag = 0
-            bomb.bomb()
-            bomb.email()
-            bomb.attack()
-            input('press any char to exit')
-            os.system('cls')
-            exit(0)
-        elif x == 2:
-            bomb = Email_Bomber(x)
-            #bomb.bomb()
-            bomb.email()
-            bomb.sendall()
-            input('press any char to exit')
-            os.system('cls')
-            exit(0)
-        elif x == 3:
-            Email_Bomber.flag = 55
-            bomb = Email_Bomber(x)
-            bomb.email()
-            y = input('copy the text which you want to scan and press enter ')
-            yyy = str(pyperclip.paste())
-            bomb.regex_email(yyy)
-            print(bcolors.GREEN +'sent to all emails !!')
+    while(True):
+        print('1.Bomb\n2.send email to masses\n3.extract mail from text and send mail')
+        x = int(input('enter'))
+        
+        if x >= 1 and x <= 3 :
+            if x == 1:
+                bomb = Email_Bomber(x)
+                Email_Bomber.flag = 0
+                bomb.bomb()
+                bomb.email()
+                bomb.attack()
+                input('press any char to exit')
+                os.system('cls')
+                exit(0)
+            elif x == 2:
+                bomb = Email_Bomber(x)
+                #bomb.bomb()
+                bomb.email()
+                bomb.sendall()
+                input('press any char to exit')
+                os.system('cls')
+                exit(0)
+            elif x == 3:
+                Email_Bomber.flag = 55
+                bomb = Email_Bomber(x)
+                bomb.email()
+                y = input('copy the text which you want to scan and press enter ')
+                yyy = str(pyperclip.paste())
+                bomb.regex_email(yyy)
+                print(bcolors.GREEN +'sent to all emails !!')
             
 
 
